@@ -1,0 +1,14 @@
+SELECT DISTINCT ?author ?author_name ?s ?s_name (COUNT(?s) AS ?count)
+WHERE{
+  ?b wdt:P179 ?s;
+        wdt:P31 wd:Q7725634.
+  ?s wdt:P50 ?author;
+     rdfs:label ?s_name
+  FILTER (LANG(?s_name)='en')
+  ?author rdfs:label ?author_name.
+  FILTER (LANG(?author_name)='en')
+  }
+GROUP BY ?author ?author_name ?s ?s_name
+HAVING (?count>10)
+ORDER BY DESC(?count)
+LIMIT 10

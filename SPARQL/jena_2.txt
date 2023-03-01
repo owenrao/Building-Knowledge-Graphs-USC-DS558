@@ -1,0 +1,28 @@
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX db: <http://dbpedia.org/>
+PREFIX gold: <http://purl.org/linguistics/gold/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX movie: <http://data.linkedmdb.org/movie/>
+PREFIX film: <http://data.linkedmdb.org/film/>
+PREFIX actor: <http://data.linkedmdb.org/actor/>
+PREFIX purl: <http://purl.org/dc/terms/>
+PREFIX dbp: <http://dbpedia.org/property/>
+PREFIX dbr: <http://dbpedia.org/resource/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+
+SELECT DISTINCT ?a_name ?bday
+WHERE {
+  SERVICE <http://dbpedia.org/sparql> {	
+    SELECT ?a_ ?bday
+    WHERE {?a_ gold:hypernym dbr:Actress;
+        dbo:birthDate ?bday.
+      FILTER(YEAR(?bday)<1970)
+    }
+  }
+  ?actor rdf:type movie:actor;
+         owl:sameAs ?a_;
+			movie:actor_name ?a_name
+}
+ORDER BY ASC(?bday)
+LIMIT 20

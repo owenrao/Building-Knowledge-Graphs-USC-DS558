@@ -1,0 +1,16 @@
+SELECT ?player ?playerLabel (COUNT(*) AS ?c)
+WHERE 
+{
+  {?player p:P166 [
+    	ps:P166 wd:Q166177;
+        pq:P585 ?time
+    ].} UNION
+  {?player p:P166 [
+    	ps:P166 wd:Q2291862;
+        pq:P585 ?time
+    ].}
+  FILTER (YEAR(?time)>=2000)
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+}
+GROUP BY ?player ?playerLabel
+#ORDER BY DESC(?c)

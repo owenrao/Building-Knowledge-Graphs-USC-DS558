@@ -1,0 +1,17 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX movie: <http://data.linkedmdb.org/movie/>
+PREFIX film: <http://data.linkedmdb.org/film/>
+PREFIX actor: <http://data.linkedmdb.org/actor/>
+PREFIX purl: <http://purl.org/dc/terms/>
+
+SELECT ?film_name (GROUP_CONCAT(?actor_name; SEPARATOR=",") AS ?actor_list)
+WHERE {
+  ?film movie:actor ?actor;
+        rdf:type movie:film;
+        purl:title ?film_name.
+  ?actor rdf:type movie:actor;
+         movie:actor_name ?actor_name.
+}
+GROUP BY ?film_name
+ORDER BY ASC(?film_name)
+LIMIT 20
