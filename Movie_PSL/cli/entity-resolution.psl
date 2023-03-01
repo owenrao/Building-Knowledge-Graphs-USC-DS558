@@ -1,0 +1,21 @@
+// Two movies can be the same either because
+// they have the same Title AND same Year(or Date)
+40.0: lTitle(P1, T) & rTitle(P2, T) & lYear(P1, Y) & rYear(P2, Y) & (P1 != P2) -> SameMovie(P1, P2) ^2
+// Or they have similar Title AND same Date
+40.0: SimTitleID(P1, P2) & (P1 != P2) & lDirector(P1, D) & rDirector(P2, D) -> SameMovie(P1, P2) ^2
+// Or any two combination of below
+0.75: lDate(P1, D) & rDate(P2, D) & (P1 != P2) -> SameMovie(P1, P2) ^2
+0.75: lTitle(P1, T) & rTitle(P2, T) & (P1 != P2) -> SameMovie(P1, P2) ^2
+0.75: lTitle(P1, T1) & rTitle(P2, T2) & (T1 != T2) & SimTitleID(P1, P2) & (P1 != P2) -> SameMovie(P1, P2) ^2
+0.75: lDirector(P1, T) & rDirector(P2, T) & (P1 != P2) -> SameMovie(P1, P2) ^2
+
+// Pure transitivity
+20.0: SameMovie(A1, A2) & SameMovie(A2, A3)
+   & (A1 != A3) & (A1 != A2) & (A2 != A3)
+   -> SameMovie(A1, A3) ^2
+
+// Self-refernece.
+SameMovie(A, A) = 1.0 .
+
+// Negative priors.
+1.0: !SameMovie(A1, A2) ^2
