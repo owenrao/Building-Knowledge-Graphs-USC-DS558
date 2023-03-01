@@ -1,0 +1,185 @@
+@prefix dbpedia: <https://dbpedia.org/ontology/> .
+@prefix isbn: <https://isbndb.com/book/> .
+@prefix myns: <http://dsci558.org/myfakenamespace#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+myns:audiobookPrice a rdf:Property ;
+    rdfs:domain schema:Book ;
+    rdfs:range xsd:dollar ;
+    rdfs:subPropertyOf schema:price .
+
+myns:hardcoverPrice a rdf:Property ;
+    rdfs:domain schema:Book ;
+    rdfs:range xsd:dollar ;
+    rdfs:subPropertyOf schema:price .
+
+myns:nookBookPrice a rdf:Property ;
+    rdfs:domain schema:Book ;
+    rdfs:range xsd:dollar ;
+    rdfs:subPropertyOf schema:price .
+
+myns:paperbackPrice a rdf:Property ;
+    rdfs:domain schema:Book ;
+    rdfs:range xsd:dollar ;
+    rdfs:subPropertyOf schema:price .
+
+myns:salesRank a rdf:Property ;
+    rdfs:domain schema:Book ;
+    rdfs:range xsd:integer ;
+    rdfs:subPropertyOf dbpedia:rank .
+
+isbn:9781409105725 a schema:Book ;
+    myns:salesRank 311572 ;
+    rdfs:seeAlso myns:good_3534 ;
+    schema:archivedAt "https://www.barnesandnoble.com/" ;
+    schema:author "Peter Sallis"^^schema:Person ;
+    schema:datePublished "09/18/2008"^^schema:Date ;
+    schema:gtin13 "9781409105725" ;
+    schema:name "Fading Into The Limelight: The Autobiography" ;
+    schema:publisher "Orion Publishing Group, Limited"^^schema:Organization ;
+    .
+
+myns:good_39 a schema:Book ;
+    rdfs:seeAlso isbn:9781406753493 ;
+    schema:aggregateRating [ a schema:AggregateRating ;
+            schema:ratingCount 16 ;
+            schema:ratingValue "3.81"^^xsd:float ] ;
+    schema:archivedAt "https://www.goodreads.com/" ;
+    schema:author "Leonard Woolf"^^schema:Person,
+        "S.S. Koteliansky"^^schema:Person,
+        "Sofia Tolstaya"^^schema:Person ;
+    schema:bookFormat "Kindle Edition" ;
+    schema:description "This book was converted from its physical edition to the digital format by a community of volunteers. You may find it for free on the web. Purchase of the Kindle edition includes wireless delivery." ;
+    schema:inLanguage schema:English ;
+    schema:name "Autobiography of Countess Tolstoy" ;
+    schema:numberOfPages 68 ;
+    schema:review [ a schema:Review ;
+            schema:commentCount 1 ] .
+
+isbn:9780786754083 a schema:Book ;
+    myns:salesRank 798158 ;
+    rdfs:seeAlso myns:good_821 ;
+    schema:archivedAt "https://www.barnesandnoble.com/" ;
+    schema:author "Con Slobodchikoff"^^schema:Person ;
+    schema:datePublished "08/01/2012"^^schema:Date ;
+    schema:gtin13 "9780786754083" ;
+    schema:name "Autobiography of a Poodle" ;
+    schema:numberOfPages 135 ;
+    schema:publisher "Argo-Navis"^^schema:Organization ;
+    .
+
+myns:good_3534 a schema:Book ;
+    rdfs:seeAlso isbn:9781409105725 ;
+    schema:aggregateRating [ a schema:AggregateRating ;
+            schema:ratingCount 8 ;
+            schema:ratingValue "3.75"^^xsd:float ] ;
+    schema:archivedAt "https://www.goodreads.com/" ;
+    schema:author "Fading Into The Limelight: The Autobiography"^^schema:Person ;
+    schema:bookFormat "Kindle Edition" ;
+    schema:description " " ;
+    schema:name "Fading Into The Limelight: The Autobiography" ;
+    schema:numberOfPages 0 ;
+    schema:review [ a schema:Review ;
+            schema:commentCount 1 ] .
+
+myns:good_3676 a schema:Book ;
+    rdfs:seeAlso isbn:9781607788249 ;
+    schema:aggregateRating [ a schema:AggregateRating ;
+            schema:ratingCount 39 ;
+            schema:ratingValue "3.49"^^xsd:float ] ;
+    schema:archivedAt "https://www.goodreads.com/" ;
+    schema:author "Mark Twain"^^schema:Person ;
+    schema:bookFormat "Kindle Edition" ;
+    schema:description "This book was converted from its physical edition to the digital format by a community of volunteers. You may find it for free on the web. Purchase of the Kindle edition includes wireless delivery." ;
+    schema:name "Mark Twain's Burlesque Autobiography" ;
+    schema:numberOfPages 24 ;
+    schema:review [ a schema:Review ;
+            schema:commentCount 3 ] .
+
+isbn:9780802834645 a schema:Book ;
+    rdfs:seeAlso isbn:9780802834645 ;
+    schema:aggregateRating [ a schema:AggregateRating ;
+            schema:ratingCount 9 ;
+            schema:ratingValue "3.22"^^xsd:float ] ;
+    schema:archivedAt "https://www.barnesandnoble.com/",
+        "https://www.goodreads.com/" ;
+    schema:author "William Barclay"^^schema:Person ;
+    schema:bookFormat schema:Hardcover ;
+    schema:datePublished "01/01/1975"^^schema:Date,
+        "January 28th 1975"^^schema:Date ;
+    schema:description "One of the many pleasures of A SPIRITUAL AUTOBIOGRAPHY is meeting and understanding the man who has led his passion for life lead him to the top, as an internationally respected theologian and teacher. With warmth and wit, William Barclay reflects on his upbringing, education, and career." ;
+    schema:gtin13 "9780802834645" ;
+    schema:inLanguage schema:English ;
+    schema:isbn "0802816037" ;
+    schema:name "William Barclay: A Spiritual Autobiography" ;
+    schema:numberOfPages 122 ;
+    schema:publisher "Eerdmans"^^schema:Organization,
+        "Eerdmans, William B. Publishing Company"^^schema:Organization ;
+    schema:review [ a schema:Review ;
+            schema:commentCount 1 ] ;
+    .
+
+isbn:9780807102732 a schema:Book ;
+    myns:salesRank 555149 ;
+    rdfs:seeAlso isbn:9780807102732 ;
+    schema:aggregateRating [ a schema:AggregateRating ;
+            schema:ratingCount 30 ;
+            schema:ratingValue "4.37"^^xsd:float ] ;
+    schema:archivedAt "https://www.barnesandnoble.com/",
+        "https://www.goodreads.com/" ;
+    schema:author "John W. Blassingame"^^schema:Person ;
+    schema:bookFormat schema:Paperback ;
+    schema:datePublished "06/28/1977"^^schema:Date,
+        "June 1st 1977"^^schema:Date ;
+    schema:description "Written and oral testimony to the conditions and experiences of slavery reveal the everyday lives and extraordinary culture of black slaves." ;
+    schema:gtin13 "9780807102732" ;
+    schema:inLanguage schema:English ;
+    schema:isbn "0807102733" ;
+    schema:name "Slave Testimony: Two Centuries of Letters, Speeches, Interviews, and Autobiographies" ;
+    schema:numberOfPages 777 ;
+    schema:publisher "Louisiana State University Press"^^schema:Organization,
+        "Lsu Press"^^schema:Organization ;
+    schema:review [ a schema:Review ;
+            schema:commentCount 6 ] ;
+    schema:size "6.10(w) x 8.92(h) x 1.71(d)"^^schema:SizeSpecification .
+
+isbn:9780807139769 a schema:Book ;
+    myns:hardcoverPrice "43.53"^^xsd:dollar ;
+    myns:nookBookPrice "13.99"^^xsd:dollar ;
+    rdfs:seeAlso isbn:9780807137918 ;
+    schema:archivedAt "https://www.barnesandnoble.com/" ;
+    schema:author "Peggy Whitman Prenshaw"^^schema:Person ;
+    schema:datePublished "06/16/2011"^^schema:Date ;
+    schema:gtin13 "9780807139769" ;
+    schema:name "Composing Selves: Southern Women and Autobiography" ;
+    schema:numberOfPages 368 ;
+    schema:publisher "Louisiana State University Press"^^schema:Organization ;
+    .
+
+isbn:9780807608777 a schema:Book ;
+    rdfs:seeAlso isbn:9780807608777 ;
+    schema:aggregateRating [ a schema:AggregateRating ;
+            schema:ratingCount 4 ;
+            schema:ratingValue "4.5"^^xsd:float ] ;
+    schema:archivedAt "https://www.barnesandnoble.com/",
+        "https://www.goodreads.com/" ;
+    schema:author "Kathleen Raine"^^schema:Person ;
+    schema:bookFormat schema:Hardcover ;
+    schema:datePublished "02/01/1978"^^schema:Date ;
+    schema:description " " ;
+    schema:gtin13 "9780807608777" ;
+    schema:inLanguage schema:English ;
+    schema:isbn "0807608777" ;
+    schema:name "Lion's Mouth: Concluding Chapters of Autobiography",
+        "The Lion's Mouth: Concluding Chapters Of Autobiography" ;
+    schema:numberOfPages 0,
+        192 ;
+    schema:publisher "Braziller, George Inc."^^schema:Organization,
+        "George Braziller"^^schema:Organization ;
+    schema:review [ a schema:Review ;
+            schema:commentCount 1 ] ;
+    .
+
